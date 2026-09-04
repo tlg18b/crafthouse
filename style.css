@@ -16,6 +16,8 @@ body{
   
     /* Optional: Fixes the background in place while scrolling content */
     background-attachment: fixed; 
+    transition: background-image 0.5s ease-in-out;
+
 }
 .panel {
     display: flex;
@@ -141,4 +143,8 @@ button {
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.24px;
+}
+
+body:has(.working:hover) {
+  background-image: url('cicada15.png');
 }
