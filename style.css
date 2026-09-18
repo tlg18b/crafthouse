@@ -4,23 +4,57 @@ body{
     margin: 0;
     min-height: var(--viewport-height) !important;
     width: 100%;
-    background-image: url(cicada.png);
-    transition: background-image 0.5s ease;
-
-     /* Scale the image to completely fill the width and height */
-    background-size: cover;
-  
-    /* Keep the image centered on the page */
-    background-position: center center;
-  
-    /* Prevent the image from repeating if it loads slowly or shrinks */
-    background-repeat: no-repeat;
-  
-    /* Optional: Fixes the background in place while scrolling content */
-    background-attachment: fixed; 
-    
+    background-color: #02254E; /* fallback color while images load */
 
 }
+
+/* --- Crossfading background layers ---
+   Instead of swapping body's background-image (which can't transition
+   smoothly between two different URLs), we stack one full-screen layer
+   per project image and fade their opacity in/out. Opacity *can*
+   animate, so this gives a real crossfade instead of a hard cut. */
+
+.bg-layers {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-layer {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.bg-default   { opacity: 1; background-image: url(cicada.png); }
+.bg-working   { background-image: url(workingclass.png); }
+.bg-likeness  { background-image: url(likeness.png); }
+.bg-bossanova { background-image: url(bossanova.png); }
+.bg-mumma     { background-image: url(mumma.png); }
+.bg-munchies  { background-image: url(munchies.png); }
+.bg-cicada    { background-image: url(cicada.png); }
+.bg-girlhood  { background-image: url(girlhood.png); }
+.bg-churchcamp{ background-image: url(churchcamp.png); }
+
+/* Fade the matching layer in on hover */
+body:has(.working:hover)    .bg-working    { opacity: 1; }
+body:has(.likeness:hover)   .bg-likeness   { opacity: 1; }
+body:has(.bossanova:hover)  .bg-bossanova  { opacity: 1; }
+body:has(.mumma:hover)      .bg-mumma      { opacity: 1; }
+body:has(.munchies:hover)   .bg-munchies   { opacity: 1; }
+body:has(.cicada:hover)     .bg-cicada     { opacity: 1; }
+body:has(.girlhood:hover)   .bg-girlhood   { opacity: 1; }
+body:has(.churchcamp:hover) .bg-churchcamp { opacity: 1; }
+
+/* Fade the default out whenever any project is hovered */
+body:has(.project:hover) .bg-default { opacity: 0; }
+
 .panel {
     display: flex;
     width: 453px;
@@ -214,48 +248,3 @@ button:hover {
     align-items: flex-start;
     gap: 8px;
 }
-
-body:has(.working:hover) {
-  background-image: url('workingclass.png');
-  transition: background-image 0.5s ease-in-out;
-  background-size: cover;
-    
-}
-
-body:has(.munchies:hover) {
-  background-image: url('munchies.png');
-  transition: background-image 0.5s;
-  background-size: cover;
-  background-size: cover;
-}
-
-body:has(.cicada:hover) {
-  background-image: url('cicada.png');
-  transition: background-image 0.5s ease;
-  background-size: cover;
-}
-
-body:has(.girlhood:hover) {
-  background-image: url('girlhood.png');
-  transition: background-image 0.5s ease;
-  background-size: cover;
-}
-
-body:has(.churchcamp:hover) {
-  background-image: url('churchcamp.png');
-  transition: background-image 0.5s ease;
-  background-size: cover;
-}
-
-body:has(.bossanova:hover) {
-  background-image: url('bossanova.png');
-  transition: background-image 0.5s ease;
-  background-size: cover;
-}
-
-body:has(.mumma:hover) {
-  background-image: url('mumma.png');
-  transition: background-image 0.5s ease;
-  background-size: cover;
-}
-
