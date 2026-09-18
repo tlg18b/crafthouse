@@ -1,0 +1,261 @@
+
+body{
+
+    margin: 0;
+    min-height: var(--viewport-height) !important;
+    width: 100%;
+    background-image: url(cicada.png);
+    transition: background-image 0.5s ease;
+
+     /* Scale the image to completely fill the width and height */
+    background-size: cover;
+  
+    /* Keep the image centered on the page */
+    background-position: center center;
+  
+    /* Prevent the image from repeating if it loads slowly or shrinks */
+    background-repeat: no-repeat;
+  
+    /* Optional: Fixes the background in place while scrolling content */
+    background-attachment: fixed; 
+    
+
+}
+.panel {
+    display: flex;
+    width: 453px;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: rgba(2, 37, 78, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+
+    margin: 20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    height: 800px;        /* 1. Establish a height limit */
+    overflow-y: auto;     /* 2. Enable vertical scrolling only when needed */
+    overflow-x: hidden;
+    scrollbar-width: none;
+
+}
+
+
+.logo {
+
+    width: 400px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panelbuttons {
+
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    
+}
+
+button {
+    
+    background-color: transparent;
+    border-color: rgba(245, 232, 216, 0.2);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: .9px;
+
+    width: 100%;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+
+}
+
+button:hover {
+    background-color: rgba(245, 232, 216, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-out;
+
+}
+
+.button2 {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 23px;
+    border: 1px solid rgba(245, 232, 216, 0.20);
+    background: #02254E1A;
+    text-decoration: none;
+    color: white;
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+
+}
+
+.button2:hover {
+    background-color: rgba(245, 232, 216, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-out;
+
+}
+
+.sectiontitle {
+        
+    width: 100%; 
+    height: 100%; 
+    padding-top: 20px; 
+    padding-bottom: 8px; 
+    border-bottom: 1px rgba(245, 232, 216, 0.20) solid; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+
+    font-size: 15px;
+    color: white;
+    font-family: Geist; 
+    font-weight: 300; 
+    letter-spacing: 0.32px; 
+    word-wrap: break-word;
+
+}
+
+
+.project {
+  margin-top: 12px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(245, 232, 216, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2px;
+
+  color: white;
+  font-family: "Geist", sans-serif;
+
+  opacity: .7;
+
+}
+
+.project-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+}
+
+.project-info {
+  width: 100%;
+
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.24px;
+}
+
+.project:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.tags {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  color: rgba(255, 255, 255, 0.3);
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.24px;
+}
+
+.topnav {
+  position: absolute;
+  top: 20px; 
+  right: 20px;
+  display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+body:has(.working:hover) {
+  background-image: url('workingclass.png');
+  transition: background-image 0.5s ease-in-out;
+  background-size: cover;
+    
+}
+
+body:has(.munchies:hover) {
+  background-image: url('munchies.png');
+  transition: background-image 0.5s;
+  background-size: cover;
+  background-size: cover;
+}
+
+body:has(.cicada:hover) {
+  background-image: url('cicada.png');
+  transition: background-image 0.5s ease;
+  background-size: cover;
+}
+
+body:has(.girlhood:hover) {
+  background-image: url('girlhood.png');
+  transition: background-image 0.5s ease;
+  background-size: cover;
+}
+
+body:has(.churchcamp:hover) {
+  background-image: url('churchcamp.png');
+  transition: background-image 0.5s ease;
+  background-size: cover;
+}
+
+body:has(.bossanova:hover) {
+  background-image: url('bossanova.png');
+  transition: background-image 0.5s ease;
+  background-size: cover;
+}
+
+body:has(.mumma:hover) {
+  background-image: url('mumma.png');
+  transition: background-image 0.5s ease;
+  background-size: cover;
+}
+
