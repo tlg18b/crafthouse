@@ -36,9 +36,9 @@ body {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 572px 572px;
+    grid-template-columns: 500px 500px;
     justify-content: space-between;
-    gap: 236px; /* left col ends at 592, right col starts at 848 */
+    gap: 100px; /* left col ends at 592, right col starts at 848 */
     max-width: 1400px;
     margin: 0 auto;
     padding: 174px 20px 80px;
@@ -164,7 +164,7 @@ body {
 
 /* --- Responsive: stack columns on narrower viewports --- */
 
-@media (max-width: 1500px) {
+@media (max-width: 1110px) {
     .about-grid {
         grid-template-columns: 1fr;
         max-width: 572px;
@@ -182,6 +182,6 @@ body {
     }
     .founder-photo {
         height: auto;
-        aspect-ratio: 572 / 569;
+        aspect-ratio: 500 / 490;
     }
 }
