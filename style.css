@@ -8,11 +8,7 @@ body{
 
 }
 
-/* --- Crossfading background layers ---
-   Instead of swapping body's background-image (which can't transition
-   smoothly between two different URLs), we stack one full-screen layer
-   per project image and fade their opacity in/out. Opacity *can*
-   animate, so this gives a real crossfade instead of a hard cut. */
+
 
 .bg-layers {
     position: fixed;
