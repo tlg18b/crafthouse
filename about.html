@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+      <script>
+        // Runs before paint: only browsers lacking native cross-document
+        // View Transitions get the JS fade fallback (see style.css / transition.js).
+        if (!('startViewTransition' in document)) {
+            document.documentElement.classList.add('js-fade');
+        }
+    </script>
+
 </head>
 <body>
 
@@ -27,7 +36,7 @@
         </div>
 
         <div class="bottomnav">
-            <a href="index.html">BACK</a>
+            <a href="index.html">HOME</a>
         </div>
 
 </body>

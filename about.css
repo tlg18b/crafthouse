@@ -1,4 +1,39 @@
+/* Smooth, modern crossfade between index.html and about.html */
+@view-transition {
+    navigation: auto;
+}
+ 
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
 
+/* Fallback for browsers without native cross-document View Transitions
+   (Safari, Firefox) — see transition.js. Only applied when html.js-fade
+   is present, so Chromium browsers are unaffected. */
+html.js-fade body {
+    opacity: 0;
+    transition: opacity 0.38s ease;
+}
+ 
+html.js-fade body.is-visible {
+    opacity: 1;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    html.js-fade body {
+        transition: none;
+        opacity: 1;
+    }
+}
 
 body {
     margin: 0;

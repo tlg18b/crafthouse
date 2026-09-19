@@ -1,3 +1,39 @@
+/* Smooth, modern crossfade between index.html and about.html */
+@view-transition {
+    navigation: auto;
+}
+ 
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
+
+/* Fallback for browsers without native cross-document View Transitions
+   (Safari, Firefox) — see transition.js. Only applied when html.js-fade
+   is present, so Chromium browsers are unaffected. */
+html.js-fade body {
+    opacity: 0;
+    transition: opacity 0.38s ease;
+}
+ 
+html.js-fade body.is-visible {
+    opacity: 1;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    html.js-fade body {
+        transition: none;
+        opacity: 1;
+    }
+}
 
 body{
 
@@ -26,6 +62,14 @@ body{
 
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
+}
+
+/* Subtle vignette sitting above all image layers, below the panel */
+.bg-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.45) 100%);
+    pointer-events: none;
 }
 
 .bg-default   { opacity: 1; background-image: url(cicada.png); }
@@ -125,32 +169,6 @@ button:hover {
 
 }
 
-.button2 {
-    display: flex;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    border-radius: 23px;
-    border: 1px solid rgba(245, 232, 216, 0.20);
-    background: #02254E1A;
-    text-decoration: none;
-    color: white;
-    font-family: "Geist", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 14px;
-
-}
-
-.button2:hover {
-    background-color: rgba(245, 232, 216, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease-out;
-
-}
 
 .sectiontitle {
         
@@ -236,11 +254,11 @@ button:hover {
   letter-spacing: 0.24px;
 }
 
-.topnav {
-  position: absolute;
-  top: 20px; 
-  right: 20px;
-  display: inline-flex;
-    align-items: flex-start;
-    gap: 8px;
+.tracyportfolio:hover {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
+
+
