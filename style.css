@@ -75,6 +75,7 @@ body{
 .bg-default   { opacity: 1; background-image: url(cicada.png); }
 .bg-working   { background-image: url(workingclass.png); }
 .bg-likeness  { background-image: url(likeness.png); }
+.bg-spoilsofoffice { background-image: url(spoilsofoffice.png); }
 .bg-bossanova { background-image: url(bossanova.png); }
 .bg-mumma     { background-image: url(mumma.png); }
 .bg-munchies  { background-image: url(munchies.png); }
@@ -85,6 +86,7 @@ body{
 /* Fade the matching layer in on hover */
 body:has(.working:hover)    .bg-working    { opacity: 1; }
 body:has(.likeness:hover)   .bg-likeness   { opacity: 1; }
+body:has(.spoilsofoffice:hover) .bg-spoilsofoffice { opacity: 1; }
 body:has(.bossanova:hover)  .bg-bossanova  { opacity: 1; }
 body:has(.mumma:hover)      .bg-mumma      { opacity: 1; }
 body:has(.munchies:hover)   .bg-munchies   { opacity: 1; }
