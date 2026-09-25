@@ -41,6 +41,14 @@ html.js-fade body.is-visible {
     }
 }
 
+.page-vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.1) 100%);
+}
+
 
 /* --- Hero / trailer --- */
 
@@ -86,99 +94,126 @@ html.js-fade body.is-visible {
 /* --- Content below the hero --- */
 
 .project-content {
-    padding: 90px 64px 120px;
-}
-
-.project-grid {
+    background: #FAF3EB;
+    margin: 40px 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 120px;
-    max-width: 1400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+    grid-template-rows: repeat(4, auto);  /* 4 Auto Height Rows */
+    row-gap: 40px;
 }
 
-.project-col {
-    display: flex;
-    flex-direction: column;
-    gap: 56px;
-}
-
-.info-block {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.section-title {
-    margin: 0;
-    height: 38px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(31, 31, 31, 0.20);
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-
+.logline {
+    grid-row-start: 1;
+    grid-column-start: 1;
     color: #1F1F1F;
     font-size: 15px;
     font-family: "Geist", sans-serif;
     font-weight: 300;
     letter-spacing: 0.32px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #D9D9D9;
+
 }
 
-.info-text {
-    margin: 0;
-    color: rgba(0, 0, 0, 0.80);
-    font-size: 15px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-.info-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
+.description {
+    grid-row-start: 1;
+    grid-column-start: 2;
     color: #1F1F1F;
-    font-size: 15px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-/* --- Film crew list --- */
-
-.crew-list {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.crew-entry {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.crew-role {
-    color: rgba(31, 31, 31, 0.55);
-    font-size: 13px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.24px;
-}
-
-.crew-name {
-    color: #1F1F1F;
-    font-size: 15px;
+    font-size: 18px;
     font-family: "Geist", sans-serif;
     font-weight: 400;
-    letter-spacing: 0.28px;
+    letter-spacing: 0.32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #D9D9D9;
 }
+
+.empty-block {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    border-bottom: 1px solid #D9D9D9;
+
+}
+
+.label {
+    color: #1F1F1F;
+    font-size: 15px;
+    font-family: "Geist", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+}
+
+.key {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+}
+
+.stars {
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+}
+
+.main-crew {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+}
+
+.other-crew{
+    grid-row-start: 2;
+    grid-column-start: 3;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+}
+
+.laurels {
+    grid-column: 2 / 4; 
+    width: 100%;
+
+    img {
+        max-width: 100%; /* Ensures it never gets wider than the container */
+        height: auto;   /* Lets browser calculate height based on width */
+        width: 100%;
+    }
+}
+
+.awards-continued {
+    grid-column: 2 / 4; 
+    font-size: 14px;
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    line-height: 2.5;
+}
+
+.back-btn {
+    position: fixed;
+    top: 40px;          /* Just below the top of hero */
+    left: 40px;         /* Match the hero-title positioning */    /* Remove the centering since we're absolute */
+    margin: 0;          /* Remove margin for cleaner positioning */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        height: 40px;
+        width: 40px;
+    }
+ 
+    opacity: 0.8; /* starts slightly faded for a "floating" feel */
+    cursor: pointer;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+ 
+.back-btn:hover {
+    opacity: 1;
+}
+
 
 /* --- Responsive --- */
 
@@ -204,19 +239,16 @@ html.js-fade body.is-visible {
     }
 }
 
-.bottomnav a {
-    color: #000000;
-    font-size: 14px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+/* When hero is visible */
+:has(.hero) .back-btn {
+    --btn-bg: rgba(255, 255, 255, 0.15);
+    --btn-border: rgba(255, 255, 255, 0.4);
+    --btn-color: #FAF3EA;
 }
 
-.bottomnav a:hover {
-    opacity: 0.6;
+/* When content is visible (hero scrolled away) */
+:not(:has(.hero)):has(.project-content) .back-btn {
+    --btn-bg: rgba(255, 255, 255, 0.15);
+    --btn-border: rgba(0, 0, 0, 0.2);
+    --btn-color: #1F1F1F;
 }

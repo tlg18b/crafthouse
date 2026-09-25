@@ -17,134 +17,119 @@
 </head>
 <body>
 
-    <!-- Hero: swap the <video> source/poster per project. Replace with an
-         embedded player (Vimeo/YouTube iframe) instead if you're hosting
-         trailers off-site rather than serving the file directly. -->
+    <div class="page-vignette"></div>
+
     <header class="hero">
         <video
             class="hero-media"
             poster="munchies.png"
             controls
             autoplay
+            loop
             preload="metadata"
             playsinline>
-            <source src="mumma-trailer.mp4" type="video/mp4">
+            <source src="munchies-trailer.mp4" type="video/mp4">
         </video>
         <div class="hero-scrim"></div>
-        <h1 class="hero-title">Munchies (2025)</h1>
+        <h1 class="hero-title">Munchies</h1>
     </header>
 
-    <main class="project-content">
-        <div class="project-grid">
+     <div class="project-content">
 
-            <!-- Left column -->
-            <div class="project-col">
+        <div class="logline">LOGLINE</div>
 
-                <section class="info-block">
-                    <h2 class="section-title">LOGLINE</h2>
-                    <p class="info-text">After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</p>
-                </section>
+        <div class="description">After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</div>
+        
+        <div class="empty-block"></div>
 
-                <section class="info-block">
-                    <h2 class="section-title">STARRING</h2>
-                    <ul class="info-list">
-                        <li>Brianne Jackson</li>
-                        <li>Caroline Buddendorf</li>
-                        <li>Yamini Nambimadom</li>
-                        <li>Bianca Rojas</li>
-                        <li>Max Castillo</li>
-                    </ul>
-                </section>
-
-                <section class="info-block">
-                    <h2 class="section-title">AWARDS</h2>
-                    <ul class="info-list">
-                        <li>Brianne Jackson</li>
-                        <li>Caroline Buddendorf</li>
-                        <li>Yamini Nambimadom</li>
-                        <li>Bianca Rojas</li>
-                        <li>Max Castillo</li>
-                    </ul>
-                </section>
-
-            </div>
-
-            <!-- Right column -->
-            <div class="project-col">
-
-                <section class="info-block">
-                    <h2 class="section-title">FILM CREW</h2>
-                    <div class="crew-list">
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Writer &amp; Director</div>
-                            <div class="crew-name">Brittany Alexia Young</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Producer</div>
-                            <div class="crew-name">Jaelyn Ellis</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Executive Producers</div>
-                            <div class="crew-name">Derek Hart</div>
-                            <div class="crew-name">Karen Lobst</div>
-                            <div class="crew-name">Amos Posner</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Associate Producers</div>
-                            <div class="crew-name">Erica McCray</div>
-                            <div class="crew-name">Travaé Davis</div>
-                            <div class="crew-name">Valery Garcia</div>
-                            <div class="crew-name">Ryan Lillienfield</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Director of Photography</div>
-                            <div class="crew-name">Luc Ung</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Production Designer</div>
-                            <div class="crew-name">Cassie Greer</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Editor</div>
-                            <div class="crew-name">Ash Wilson</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Post Sound Mixer</div>
-                            <div class="crew-name">Mikaela Reid</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Composer</div>
-                            <div class="crew-name">Jake Weston</div>
-                        </div>
-
-                        <div class="crew-entry">
-                            <div class="crew-role">Casting Director</div>
-                            <div class="crew-name">Elezia Miller</div>
-                        </div>
-
-                    </div>
-                </section>
-
-            </div>
-
+        <div class="stars"> 
+            <span class="label">STARRING</span>
+            <ul class="key"> 
+                <li>Brianne Jackson</li>
+                <li>Caroline Buddendorf</li>
+                <li>Yamini Nambimadom</li>
+                <li>Bianca Rojas</li>
+                <li>Max Castillo</li>
+            </ul>
+         </div>
+         
+        <div class="main-crew">
+            <span class="label">WRITTEN & DIRECTED BY</span>
+            <ul class="key"> 
+                <li>Brittany Alexia Young</li>
+            </ul>
+            <span class="label">PRODUCED BY</span>
+            <ul class="key"> 
+                <li>Jaelyn Ellis</li>
+            </ul>
+             <span class="label">EXECUTIVE PRODUCERS</span>
+            <ul class="key"> 
+                <li>Derek Hart</li>
+                <li>Karen Lobst</li>
+                <li>Amos Posner</li>
+            </ul>
+             <span class="label">ASSOCIATE PRODUCERS</span>
+            <ul class="key"> 
+                <li>Erica McCray</li>
+                <li>Ryan Lillienfield</li>
+                <li>Travaé Davis</li>
+                <li>Valery Garcia</li>
+            </ul>
+        </div>
+        <div class="other-crew">
+            <span class="label">Director of Photography</span>
+            <ul class="key"> 
+                <li>Luc Ung</li>
+            </ul>
+            <span class="label">Production Designer </span>
+            <ul class="key"> 
+                <li>Cassie Greer</li>
+            </ul>
+             <span class="label">Editor</span>
+            <ul class="key"> 
+                <li>Ash Wilson</li>
+            </ul>
+             <span class="label">Post sound mixer</span>
+            <ul class="key"> 
+                <li>Mikaela Reid</li>
+            </ul>
+            <span class="label">Composer</span>
+            <ul class="key"> 
+                <li>Jake Weston</li>
+            </ul>
+            <span class="label">Casting director</span>
+            <ul class="key"> 
+                <li>Elezia Miller</li>
+            </ul>
+        </div>
+        <div class="label">Festival Selections & Awards</div>
+        <div class="laurels">
+            <img src="munchies-laurels.png" > 
         </div>
 
-        <div class="bottomnav">
-            <a href="index.html">HOME</a>
+        <div class="label"> Awards Continued</div>
+        <div class="awards-continued">
+            <ul style="list-style-type: none; padding: 0; margin: 0;"> 
+                <li>2025 National Film Festival of Talented Youth - World Premiere - Audience Award</li>
+                <li>2025 Bend Film Festival - Official Selection</li>
+                <li>2025 Out on Film - Official Selection</li>
+                <li>2025 Tallgrass Film Festival - Official Selection</li>
+                <li>2025 Drunken Film Fest Oakland 2025 - Official Selection</li>
+                <li>2025 Way Out West Film Fest - Official Selection</li>
+                <li>2025 Philadelphia Film Festival - Official Selection</li>
+                <li>2026 Newark LGBTQ Film Festival - Official Selection</li>
+                <li>2026 Provincetown International Film Festival - Official Selection</li>
+                <li>2026 UncFest - Official Selection</li>
+                <li>2026 WYO Film Festival - Official Selection</li>
+                <li>2026 PROOF Film Festival - Official Selection</li>
+            </ul>
         </div>
+    </div>
 
-    </main>
+        <a href="index.html" class="back-btn nav-link">
+            <img src="Skip back.png" alt="Back">
+        </a>
+
 
     <script src="transition.js" defer></script>
-
-</body>
 </html>
