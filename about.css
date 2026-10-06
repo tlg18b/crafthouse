@@ -51,7 +51,6 @@ body {
 .logo {
 
     width: 400px;
-    height: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -59,20 +58,21 @@ body {
 }
 
 
-.bottomnav a {
-    color: #ffffff;
-    font-size: 14px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.icon-button {
+    width: 24px;
+    height: 24px;
+    display: block;
+    
+    /* Added this line */
+    position: fixed; 
+    
+    /* Positioning and Centering */
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.bottomnav a:hover {
+.icon-button:hover {
     opacity: 0.6;
 }
 
@@ -84,17 +84,10 @@ body {
     font-size: 14px;
     font-family: "Geist", sans-serif;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: auto;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 454px;
     text-align: center;
 }
 
-.email {
-    color: #ffffff;
-    font-size: 14px;
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    text-decoration: underline;
-}

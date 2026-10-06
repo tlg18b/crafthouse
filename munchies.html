@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRAFTHOUSE — Munchies</title>
     <link rel="stylesheet" href="munchies.css">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script>
+    <title>MUNCHIES</title>
+
+     <script>
         if (!('startViewTransition' in document)) {
             document.documentElement.classList.add('js-fade');
         }
     </script>
+
 </head>
 <body>
 
-    <div class="page-vignette"></div>
+    <nav class="navbar">
+    <!-- Logo Group -->
+    <div class="logo-container">
+        <a href="index.html" class="logo-link">
+            <img style="width: auto; height: 32px;" src="nav-logo.png" alt="logo">
+        </a>
+    </div>
 
-    <header class="hero">
-        <video
-            class="hero-media"
+    <!-- Links Group -->
+    <div class="nav-links">
+        <a href="index.html" class="nav-item">HOME</a>
+        <a href="about.html" class="nav-item">ABOUT</a>
+        <a href="cicada.html" class="nav-item">NEXT PROJECT</a>
+    </div>
+</nav>
+
+<div style="margin-left: 40px; margin-right: 40px;">
+    <video
+            class="miniclip"
             poster="munchies.png"
             controls
             autoplay
@@ -30,106 +45,166 @@
             playsinline>
             <source src="munchies-trailer.mp4" type="video/mp4">
         </video>
-        <div class="hero-scrim"></div>
-        <h1 class="hero-title">Munchies</h1>
-    </header>
+    </div>
 
-     <div class="project-content">
+    <div>
+    <div class="project-header">
+        <span>MUNCHIES <span style="font-weight: 300;"> 2025 </span></span>
+        <span style="font-weight: 300; font-size: 16px"> Narrative Short</span>
+    </div>
+        <span 
+        style="font-weight: 300; 
+        font-size: 16px; 
+        font-family: Geist;
+        margin: 20px 0px 0px 40px; ">
+        Crime/Comedy (11 minutes)
+    </span>
+    <hr>
+    </div>
 
-        <div class="logline">LOGLINE</div>
+    <div class="project-about">
 
-        <div class="description">After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</div>
-        
-        <div class="empty-block"></div>
-
-        <div class="stars"> 
-            <span class="label">STARRING</span>
-            <ul class="key"> 
-                <li>Brianne Jackson</li>
-                <li>Caroline Buddendorf</li>
-                <li>Yamini Nambimadom</li>
-                <li>Bianca Rojas</li>
-                <li>Max Castillo</li>
-            </ul>
-         </div>
-         
-        <div class="main-crew">
-            <span class="label">WRITTEN & DIRECTED BY</span>
-            <ul class="key"> 
-                <li>Brittany Alexia Young</li>
-            </ul>
-            <span class="label">PRODUCED BY</span>
-            <ul class="key"> 
-                <li>Jaelyn Ellis</li>
-            </ul>
-             <span class="label">EXECUTIVE PRODUCERS</span>
-            <ul class="key"> 
-                <li>Derek Hart</li>
-                <li>Karen Lobst</li>
-                <li>Amos Posner</li>
-            </ul>
-             <span class="label">ASSOCIATE PRODUCERS</span>
-            <ul class="key"> 
-                <li>Erica McCray</li>
-                <li>Ryan Lillienfield</li>
-                <li>Travaé Davis</li>
-                <li>Valery Garcia</li>
-            </ul>
-        </div>
-        <div class="other-crew">
-            <span class="label">Director of Photography</span>
-            <ul class="key"> 
-                <li>Luc Ung</li>
-            </ul>
-            <span class="label">Production Designer </span>
-            <ul class="key"> 
-                <li>Cassie Greer</li>
-            </ul>
-             <span class="label">Editor</span>
-            <ul class="key"> 
-                <li>Ash Wilson</li>
-            </ul>
-             <span class="label">Post sound mixer</span>
-            <ul class="key"> 
-                <li>Mikaela Reid</li>
-            </ul>
-            <span class="label">Composer</span>
-            <ul class="key"> 
-                <li>Jake Weston</li>
-            </ul>
-            <span class="label">Casting director</span>
-            <ul class="key"> 
-                <li>Elezia Miller</li>
-            </ul>
-        </div>
-        <div class="label">Festival Selections & Awards</div>
-        <div class="laurels">
-            <img src="munchies-laurels.png" > 
+        <div>
+            <p class="label">Logline</p>
+            <p class="body"> After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</p>
+            <hr>
+            <p class="label">Starring</p>
+            <p class="body">
+                Brianne Jackson
+                <br>
+                Caroline Buddendorf
+                <br>
+                Yamini Nambimadom
+                <br>
+                Bianca Rojas
+                <br>
+                Max Castillo
+            </p>
         </div>
 
-        <div class="label"> Awards Continued</div>
-        <div class="awards-continued">
-            <ul style="list-style-type: none; padding: 0; margin: 0;"> 
-                <li>2025 National Film Festival of Talented Youth - World Premiere - Audience Award</li>
-                <li>2025 Bend Film Festival - Official Selection</li>
-                <li>2025 Out on Film - Official Selection</li>
-                <li>2025 Tallgrass Film Festival - Official Selection</li>
-                <li>2025 Drunken Film Fest Oakland 2025 - Official Selection</li>
-                <li>2025 Way Out West Film Fest - Official Selection</li>
-                <li>2025 Philadelphia Film Festival - Official Selection</li>
-                <li>2026 Newark LGBTQ Film Festival - Official Selection</li>
-                <li>2026 Provincetown International Film Festival - Official Selection</li>
-                <li>2026 UncFest - Official Selection</li>
-                <li>2026 WYO Film Festival - Official Selection</li>
-                <li>2026 PROOF Film Festival - Official Selection</li>
+        <div>
+            <p class="label">WRITER AND DIRECTOR</p>
+            <p class="body">Brittany Alexia Young</p>
+
+            <p class="label">PRODUCER</p>
+            <p class="body">Jaelyn Ellis</p>
+
+            <p class="label">EXECUTIVE PRODUCERs</p>
+            <p class="body">Derek Hart, Karen Lobst, Amos Posner</p>
+
+            <p class="label">Associate PRODUCERs</p>
+            <p class="body">Erica McCray, Travaé Davis, Valery Garcia, Ryan Lillienfield</p>
+
+            <p class="label">director of photography</p>
+            <p class="body">Luc Ung</p>
+
+        </div>
+
+        <div>
+            <p class="label">PRODUCTION DESIGNER</p>
+            <p class="body">Cassie Greer</p>
+
+            <p class="label">EDITOR</p>
+            <p class="body">Ash Wilson</p>
+
+            <p class="label">POST SOUND MIXER</p>
+            <p class="body">Mikaela Reid</p>
+
+            <p class="label">COMPOSER</p>
+            <p class="body">Jake Weston</p>
+
+            <p class="label">CASTING DIRECTOR</p>
+            <p class="body">Elezia Miller</p>
+
+        </div>
+ 
+    </div>
+
+    <hr>
+
+    <div class="laurels">
+        <p class="label"> FESTIVAL SELECTIONS AND AWARDS</p>
+        <br>
+        <img src="laurels.png" alt="Laurels">
+        <pre class="laurels">
+            2025 National Film Festival of Talented Youth - World Premiere - Audience Award
+            
+            2025 Bend Film Festival - Official Selection
+            
+            2025 Out on Film - Official Selection
+
+            2025 Tallgrass Film Festival - Official Selection
+
+            2025 Drunken Film Fest Oakland 2025 - Official Selection
+
+            2025 Way Out West Film Fest - Official Selection
+
+            2025 Philadelphia Film Festival - Official Selection
+
+            2026 Newark LGBTQ Film Festival - Official Selection
+
+            2026 Provincetown International Film Festival - Official Selection
+
+            2026 UncFest - Official Selection
+
+            2026 WYO Film Festival - Official Selection
+
+            2026 PROOF Film Festival - Official Selection
+            
+        </pre>
+    </div>
+
+    <footer class="main-footer">
+    <!-- Logo and About Section -->
+    <div class="footer-brand">
+        <img src="footer-logo.png" alt="crafthouse logo">
+        <br>
+        <p class="about-sentence">CRAFTHOUSE is a New York-based production company for bold, unexpected stories from underrepresented voices.</p>
+    </div>
+
+    <!-- NEW: This wrapper allows the groups to stay together on the right -->
+    <div class="links-container">
+        <!-- Navigation Group -->
+        <div class="footer-group">
+            <span>NAVIGATION</span>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <!-- Projects Group -->
+        <div class="footer-group">
+            <span>PROJECTS</span>
+            <ul>
+                <li><a href="working-class.html">WORKING CLASS</a></li>
+                <li><a href="bossanova.html">BOSSANOVA</a></li>
+                <li><a href="mumma.html">MUMMA</a></li>
+                <li><a href="munchies.html">MUNCHIES</a></li>
+                <li><a href="cicada.html">CICADA</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Group -->
+        <div class="footer-group">
+            <span>DROP A LINE</span>
+            <ul>
+                <li><a href="#">INSTAGRAM</a></li>
+                <li><a href="#">LINKEDIN</a></li>
             </ul>
         </div>
     </div>
+</footer>
 
-        <a href="index.html" class="back-btn nav-link">
-            <img src="Skip back.png" alt="Back">
-        </a>
+<hr style="margin: 24px 40px 24px 40px;">
+
+<div class="tags">
+    <span>Site by <a href="https://tracygaboyau.com" target="_blank">Tracy Gaboyau</a></span>
+    <span>© 2025 All rights reserved</span>
+</div>
 
 
-    <script src="transition.js" defer></script>
+
+    
+</body>
 </html>
