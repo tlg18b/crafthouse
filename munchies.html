@@ -17,194 +17,249 @@
 
 </head>
 <body>
+<div class="page">
 
-    <nav class="navbar">
-    <!-- Logo Group -->
-    <div class="logo-container">
+    <nav class="navbar" aria-label="Main">
+        <!-- Logo -->
         <a href="index.html" class="logo-link">
-            <img style="width: auto; height: 32px;" src="nav-logo.png" alt="logo">
+            <img src="nav-logo.png" alt="Crafthouse">
         </a>
-    </div>
 
-    <!-- Links Group -->
-    <div class="nav-links">
-        <a href="index.html" class="nav-item">HOME</a>
-        <a href="about.html" class="nav-item">ABOUT</a>
-        <a href="cicada.html" class="nav-item">NEXT PROJECT</a>
-    </div>
-</nav>
+        <!-- Links -->
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">HOME</a>
+            <a href="about.html" class="nav-item">ABOUT</a>
+            <a href="cicada.html" class="nav-item">NEXT PROJECT</a>
+        </div>
+    </nav>
 
-<div style="margin-left: 40px; margin-right: 40px;">
-    <video
-            class="miniclip"
-            poster="munchies.png"
-            controls
-            autoplay
-            loop
-            preload="metadata"
-            playsinline>
-            <source src="munchies-trailer.mp4" type="video/mp4">
-        </video>
-    </div>
+    <main>
 
-    <div>
-    <div class="project-header">
-        <span>MUNCHIES <span style="font-weight: 300;"> 2025 </span></span>
-        <span style="font-weight: 300; font-size: 16px"> Narrative Short</span>
-    </div>
-        <span 
-        style="font-weight: 300; 
-        font-size: 16px; 
-        font-family: Geist;
-        margin: 20px 0px 0px 40px; ">
-        Crime/Comedy (11 minutes)
-    </span>
-    <hr>
-    </div>
-
-    <div class="project-about">
-
-        <div>
-            <p class="label">Logline</p>
-            <p class="body"> After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</p>
-            <hr>
-            <p class="label">Starring</p>
-            <p class="body">
-                Brianne Jackson
-                <br>
-                Caroline Buddendorf
-                <br>
-                Yamini Nambimadom
-                <br>
-                Bianca Rojas
-                <br>
-                Max Castillo
-            </p>
+        <!-- Trailer: plays muted on a loop; "Play with sound" restarts it with sound and shows the controls -->
+        <div class="video-wrap">
+            <video
+                class="miniclip"
+                poster="munchies.png"
+                autoplay
+                muted
+                loop
+                preload="metadata"
+                playsinline>
+                <source src="munchies-trailer.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="video-sound" hidden>Play with sound</button>
         </div>
 
-        <div>
-            <p class="label">WRITER AND DIRECTOR</p>
-            <p class="body">Brittany Alexia Young</p>
+        <div class="project-header">
+            <h1 class="project-title">MUNCHIES <span class="project-year">2025</span></h1>
+            <p class="project-meta">Crime/Comedy · 11 min</p>
+        </div>
 
-            <p class="label">PRODUCER</p>
-            <p class="body">Jaelyn Ellis</p>
+        <hr>
 
-            <p class="label">EXECUTIVE PRODUCERs</p>
-            <p class="body">Derek Hart, Karen Lobst, Amos Posner</p>
+        <div class="project-about">
 
-            <p class="label">Associate PRODUCERs</p>
-            <p class="body">Erica McCray, Travaé Davis, Valery Garcia, Ryan Lillienfield</p>
+            <!-- Logline + Starring: long-form blocks -->
+            <div>
+                <section class="about-block">
+                    <p class="label">Logline</p>
+                    <p class="body">After lighting up and getting the munchies, a group of vulgar teenage girls with a complicated history stumble into a botched robbery at their local convenience store. They must squash their giggles and formulate a plan to make it out alive.</p>
+                </section>
 
-            <p class="label">director of photography</p>
-            <p class="body">Luc Ung</p>
+                <section class="about-block">
+                    <p class="label">Starring</p>
+                    <ul class="body cast-list">
+                        <li>Brianne Jackson</li>
+                        <li>Caroline Buddendorf</li>
+                        <li>Yamini Nambimadom</li>
+                        <li>Bianca Rojas</li>
+                        <li>Max Castillo</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Crew: key/value pairs (dl = list of terms and their values) -->
+            <dl class="credits">
+                <div class="credit">
+                    <dt class="label">Writer and Director</dt>
+                    <dd class="body">Brittany Alexia Young</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Producer</dt>
+                    <dd class="body">Jaelyn Ellis</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Executive Producers</dt>
+                    <dd class="body">Derek Hart, Karen Lobst, Amos Posner</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Associate Producers</dt>
+                    <dd class="body">Erica McCray, Travaé Davis, Valery Garcia, Ryan Lillienfield</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Director of Photography</dt>
+                    <dd class="body">Luc Ung</dd>
+                </div>
+            </dl>
+
+            <dl class="credits">
+                <div class="credit">
+                    <dt class="label">Production Designer</dt>
+                    <dd class="body">Cassie Greer</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Editor</dt>
+                    <dd class="body">Ash Wilson</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Post Sound Mixer</dt>
+                    <dd class="body">Mikaela Reid</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Composer</dt>
+                    <dd class="body">Jake Weston</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Casting Director</dt>
+                    <dd class="body">Elezia Miller</dd>
+                </div>
+            </dl>
 
         </div>
 
-        <div>
-            <p class="label">PRODUCTION DESIGNER</p>
-            <p class="body">Cassie Greer</p>
+        <hr>
 
-            <p class="label">EDITOR</p>
-            <p class="body">Ash Wilson</p>
+        <!-- ===== Festival laurels: scrolling strip ===== -->
+        <section class="laurel-strip" aria-labelledby="laurel-heading">
+            <h2 class="label" id="laurel-heading">Festival Selections and Awards</h2>
 
-            <p class="label">POST SOUND MIXER</p>
-            <p class="body">Mikaela Reid</p>
+            <div class="laurel-marquee">
+                <ul class="laurel-track">
+                    <li><img src="laurels/hollyshorts.png" width="406" height="148" alt="HollyShorts Film Festival 2025, Oscar-qualifying, official selection"></li>
+                    <li><img src="laurels/frameline49.png" width="237" height="148" alt="Frameline49 San Francisco International LGBTQ+ Film Festival, official selection"></li>
+                    <li><img src="laurels/newfest-pride.png" width="286" height="136" alt="Newfest Pride 2025, official selection"></li>
+                    <li><img src="laurels/shortfest.png" width="221" height="140" alt="Palm Springs International ShortFest 2025, official selection"></li>
+                    <li><img src="laurels/inside-out.png" width="390" height="148" alt="Inside Out Toronto 2SLGBTQ+ Film Festival 2025, official selection"></li>
+                    <li><img src="laurels/nffty-audience-award.png" width="220" height="124" alt="NFFTY 2025, Audience Award"></li>
+                </ul>
+            </div>
 
-            <p class="label">COMPOSER</p>
-            <p class="body">Jake Weston</p>
+            <details class="festival-details">
+                <summary>
+                    <span class="when-closed">View full list</span>
+                    <span class="when-open">Hide full list</span>
+                </summary>
 
-            <p class="label">CASTING DIRECTOR</p>
-            <p class="body">Elezia Miller</p>
+                <ul class="festival-list">
+                    <li><span class="festival-year">2025</span>National Film Festival of Talented Youth</li>
+                    <li><span class="festival-year">2025</span>Bend Film Festival</li>
+                    <li><span class="festival-year">2025</span>Out on Film</li>
+                    <li><span class="festival-year">2026</span>Cinema Femme</li>
+                    <li><span class="festival-year">2025</span>Tallgrass Film Festival</li>
+                    <li><span class="festival-year">2025</span>Drunken Film Fest Oakland</li>
+                    <li><span class="festival-year">2025</span>Way Out West Film Fest</li>
+                    <li><span class="festival-year">2025</span>Philadelphia Film Festival</li>
+                    <li><span class="festival-year">2026</span>Newark LGBTQ Film Festival</li>
+                    <li><span class="festival-year">2026</span>Provincetown International Film Festival</li>
+                    <li><span class="festival-year">2026</span>UncFest</li>
+                    <li><span class="festival-year">2026</span>Outfest Next</li>
+                    <li><span class="festival-year">2026</span>WYO Film Festival</li>
+                    <li><span class="festival-year">2026</span>PROOF Film Festival</li>
+                </ul>
+            </details>
+        </section>
 
-        </div>
- 
-    </div>
-
-    <hr>
-
-    <div class="laurels">
-        <p class="label"> FESTIVAL SELECTIONS AND AWARDS</p>
-        <br>
-        <img src="laurels.png" alt="Laurels">
-        <pre class="laurels">
-            2025 National Film Festival of Talented Youth - World Premiere - Audience Award
-            
-            2025 Bend Film Festival - Official Selection
-            
-            2025 Out on Film - Official Selection
-
-            2025 Tallgrass Film Festival - Official Selection
-
-            2025 Drunken Film Fest Oakland 2025 - Official Selection
-
-            2025 Way Out West Film Fest - Official Selection
-
-            2025 Philadelphia Film Festival - Official Selection
-
-            2026 Newark LGBTQ Film Festival - Official Selection
-
-            2026 Provincetown International Film Festival - Official Selection
-
-            2026 UncFest - Official Selection
-
-            2026 WYO Film Festival - Official Selection
-
-            2026 PROOF Film Festival - Official Selection
-            
-        </pre>
-    </div>
+    </main>
 
     <footer class="main-footer">
-    <!-- Logo and About Section -->
-    <div class="footer-brand">
-        <img src="footer-logo.png" alt="crafthouse logo">
-        <br>
-        <p class="about-sentence">CRAFTHOUSE is a New York-based production company for bold, unexpected stories from underrepresented voices.</p>
+        <!-- Logo and About Section -->
+        <div class="footer-brand">
+            <img src="footer-logo.png" alt="Crafthouse">
+            <p class="about-sentence">CRAFTHOUSE is a New York-based production company for bold, unexpected stories from underrepresented voices.</p>
+        </div>
+
+        <!-- This wrapper keeps the groups together on the right -->
+        <div class="links-container">
+            <!-- Navigation Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Navigation</h2>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </div>
+
+            <!-- Projects Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Projects</h2>
+                <ul>
+                    <li><a href="working-class.html">WORKING CLASS</a></li>
+                    <li><a href="bossanova.html">BOSSANOVA</a></li>
+                    <li><a href="mumma.html">MUMMA</a></li>
+                    <li><a href="munchies.html">MUNCHIES</a></li>
+                    <li><a href="cicada.html">CICADA</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Drop a Line</h2>
+                <ul>
+                    <li><a href="https://www.instagram.com/crafthousepictures" target="_blank">INSTAGRAM</a></li>
+                    <li><a href="#">LINKEDIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <hr class="footer-rule">
+
+    <div class="tags">
+        <span>Site by <a href="https://tracygaboyau.com" target="_blank" rel="noopener">Tracy Gaboyau</a></span>
+        <span>© 2025 All rights reserved</span>
     </div>
 
-    <!-- NEW: This wrapper allows the groups to stay together on the right -->
-    <div class="links-container">
-        <!-- Navigation Group -->
-        <div class="footer-group">
-            <span>NAVIGATION</span>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-            </ul>
-        </div>
-
-        <!-- Projects Group -->
-        <div class="footer-group">
-            <span>PROJECTS</span>
-            <ul>
-                <li><a href="working-class.html">WORKING CLASS</a></li>
-                <li><a href="bossanova.html">BOSSANOVA</a></li>
-                <li><a href="mumma.html">MUMMA</a></li>
-                <li><a href="munchies.html">MUNCHIES</a></li>
-                <li><a href="cicada.html">CICADA</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Group -->
-        <div class="footer-group">
-            <span>DROP A LINE</span>
-            <ul>
-                <li><a href="#">INSTAGRAM</a></li>
-                <li><a href="#">LINKEDIN</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-<hr style="margin: 24px 40px 24px 40px;">
-
-<div class="tags">
-    <span>Site by <a href="https://tracygaboyau.com" target="_blank">Tracy Gaboyau</a></span>
-    <span>© 2025 All rights reserved</span>
 </div>
 
+<script>
+/* 1. Trailer: "Play with sound" restarts the video unmuted and shows the
+      native controls. Without JavaScript the trailer just plays muted. */
+(function () {
+    var video = document.querySelector('.miniclip');
+    var button = document.querySelector('.video-sound');
+    if (!video || !button) return;
 
+    button.hidden = false;
+    button.addEventListener('click', function () {
+        video.muted = false;
+        video.controls = true;
+        video.currentTime = 0;
+        var started = video.play();
+        if (started && started.catch) started.catch(function () {});
+        button.hidden = true;
+        video.focus();
+    });
+})();
 
-    
+/* 2. Laurel strip: duplicates the laurels so the loop is seamless and turns
+      the scrolling on. If JavaScript is off, or the visitor has "reduce
+      motion" turned on, the laurels just sit in a centered, wrapping row. */
+(function () {
+    var marquee = document.querySelector('.laurel-marquee');
+    if (!marquee) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var track = marquee.querySelector('.laurel-track');
+    Array.prototype.slice.call(track.children).forEach(function (item) {
+        var copy = item.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        copy.querySelector('img').alt = '';
+        track.appendChild(copy);
+    });
+
+    marquee.classList.add('is-animated');
+})();
+</script>
+
 </body>
 </html>

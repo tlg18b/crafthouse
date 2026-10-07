@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>CRAFTHOUSE</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -32,111 +32,117 @@
         <div class="bg-layer bg-munchies"></div>
         <div class="bg-layer bg-cicada"></div>
         <div class="bg-vignette"></div>
-        
     </div>
 
-    <div class="panel" >
-        
-        <img class="logo" src="logo.png" alt="crafthouselogo" >
-       
-        <div class="panelbuttons" >
+    <div class="panel">
+
+        <img class="logo" src="logo.png" alt="Crafthouse">
+
+        <div class="panelbuttons">
             <button type="button" onclick="window.location.href='about.html'">ABOUT</button>
             <button type="button" onclick="window.location.href='https://www.instagram.com/crafthousepictures'">INSTAGRAM</button>
         </div>
 
-    <!-- Features -->
+        <!-- Desktop: transparent wrapper (display: contents), list looks exactly as before.
+             Mobile: becomes a horizontal swipe carousel. -->
+        <div class="projects">
 
-        <div class="sectiontitle">
-            Narrative Features
+            <!-- Features -->
+
+            <div class="sectiontitle">
+                Narrative Features
+            </div>
+
+            <!-- Working Class -->
+
+            <div class="project working" data-state="default" data-bg="working" data-category="Narrative Feature">
+                <div class="project-header">
+                    <span>Working Class</span>
+                    <span>2027</span>
+                </div>
+                <div class="project-info">Drama</div>
+                <div class="project-info">69 minutes</div>
+            </div>
+
+            <!-- Likeness -->
+
+            <div class="project likeness" data-state="default" data-bg="likeness" data-category="Narrative Feature">
+                <div class="project-header">
+                    <span>Likeness</span>
+                    <span>2027</span>
+                </div>
+                <div class="project-info">Comedy</div>
+                <div class="project-info">In development</div>
+            </div>
+
+            <!-- Shorts -->
+
+            <div class="sectiontitle" style="margin-top: 22px;">
+                Narrative Shorts
+            </div>
+
+            <!-- Spoils of Office -->
+
+            <div class="project spoilsofoffice" data-state="default" data-bg="spoilsofoffice" data-category="Narrative Short">
+                <div class="project-header">
+                    <span>Spoils of Office</span>
+                    <span>2027</span>
+                </div>
+                <div class="project-info">Drama</div>
+                <div class="project-info">Post-production</div>
+            </div>
+
+            <!-- Bossanova -->
+
+            <div class="project bossanova" data-state="default" data-bg="bossanova" data-category="Narrative Short">
+                <div class="project-header">
+                    <span>Bossanova</span>
+                    <span>2027</span>
+                </div>
+                <div class="project-info">Drama/comedy</div>
+                <div class="project-info">15 minutes</div>
+            </div>
+
+            <!-- Mumma -->
+
+            <div class="project mumma" data-state="default" data-bg="mumma" data-category="Narrative Short">
+                <div class="project-header">
+                    <span>MUMMA</span>
+                    <span>2027</span>
+                </div>
+                <div class="project-info">Drama</div>
+                <div class="project-info">10 minutes</div>
+            </div>
+
+            <!-- Munchies -->
+
+            <div onclick="window.location.href='munchies.html'" class="project munchies" data-state="default" data-bg="munchies" data-category="Narrative Short">
+                <div class="project-header">
+                    <span>MUNCHIES</span>
+                    <span>2025</span>
+                </div>
+                <div class="project-info">Crime/comedy</div>
+                <div class="project-info">11 minutes</div>
+            </div>
+
+            <!-- Cicada -->
+
+            <div class="project cicada" data-state="default" data-bg="cicada" data-category="Narrative Short">
+                <div class="project-header">
+                    <span>Cicada</span>
+                    <span>2025</span>
+                </div>
+                <div class="project-info">Drama/comedy</div>
+                <div class="project-info">14 minutes</div>
+            </div>
+
         </div>
 
-    <!-- Working Class -->
-
-        <div class="project working" data-state="default">
-        <div class="project-header">
-            <span>Working Class</span>
-            <span>2027</span>
-        </div>
-        <div class="project-info">Drama</div>
-        <div class="project-info">69 minutes</div>
-        </div>
-
-    <!-- Likeness -->
-
-        <div class="project likeness" data-state="default">
-        <div class="project-header">
-            <span>Likeness</span>
-            <span>2027</span>
-        </div>
-        <div class="project-info">Comedy</div>
-        <div class="project-info">In development</div>
-        </div>
-
-     <!-- Shorts -->
-
-        <div class="sectiontitle" style="margin-top: 22px;">
-            Narrative Shorts
-        </div>
-
-    <!-- Spoils of Office -->
-
-        <div class="project spoilsofoffice" data-state="default">
-        <div class="project-header">
-            <span>Spoils of Office</span>
-            <span>2027</span>
-        </div>
-        <div class="project-info">Drama</div>
-        <div class="project-info">Post-production</div>
-        </div>
-
-
-    <!-- Bossanova -->
-
-        <div class="project bossanova" data-state="default">
-        <div class="project-header">
-            <span>Bossanova</span>
-            <span>2027</span>
-        </div>
-        <div class="project-info">Drama/comedy</div>
-        <div class="project-info">15 minutes</div>
-        </div>
-
-    <!-- Mumma -->
-
-        <div class="project mumma" data-state="default">
-        <div class="project-header">
-            <span>MUMMA</span>
-            <span>2027</span>
-        </div>
-        <div class="project-info">Drama</div>
-        <div class="project-info">10 minutes</div>
-        </div>
-
-    <!-- Munchies -->
-
-        <div onclick="window.location.href='munchies.html'" class="project munchies" data-state="default">
-        <div class="project-header">
-            <span>MUNCHIES</span>
-            <span>2025</span>
-        </div>
-        <div class="project-info">Crime/comedy</div>
-        <div class="project-info">11 minutes</div>
-        </div>
-
-    <!-- Cicada -->
-
-        <div class="project cicada" data-state="default">
-        <div class="project-header">
-            <span>Cicada</span>
-            <span>2025</span>
-        </div>
-        <div class="project-info">Drama/comedy</div>
-        <div class="project-info">14 minutes</div>
-        </div>
-
+        <!-- Mobile only: dot pagination (dots are built by mobile.js) -->
+        <div class="carousel-dots" role="tablist" aria-label="Projects"></div>
 
     <!-- tags -->
-     
+
         <div class="tags" style="margin-top: 40px;">
            <span class="tracyportfolio" onclick="window.location.href='https://tracygaboyau.com'">Site by Tracy Gaboyau</span>
            <span>© 2025 All rights reserved</span>
@@ -144,6 +150,7 @@
 
     </div>
 
+    <script src="mobile.js" defer></script>
 
 </body>
 </html>

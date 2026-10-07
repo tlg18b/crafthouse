@@ -1,258 +1,530 @@
-/* Import Geist Font */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400&display=swap');
+/* Geist is loaded by the <link> in the HTML <head>. */
 
 :root {
-    /* Color Palette */
+    /* Color palette */
     --primary-blue: #02254E;
     --light-blue: #3A5D8F;
     --dark-gray: #1F1F1F;
     --cream: #F5E8D8;
-    --accent-red: #6E2513; /* Renamed from "White Red" for clarity */
+    --accent-red: #6E2513;
+    --text-muted: #666666;          /* labels and secondary text (5:1 contrast on the page color) */
+    --hairline: rgba(31, 31, 31, 0.15);
 
-    /* Typography Settings */
+    /* Typography */
     --font-main: 'Geist', sans-serif;
-    
-    /* Font Sizes & Weights */
-    --fs-display: 40px;
-    --fs-heading: 24px;
-    --fs-subheading: 18px;
-    --fs-body: 14px;
-    --fs-button: 14px;
-    --fs-tag: 15px;
-    --fs-footer: 10px;
+
+    /* Type scale: use these everywhere instead of raw px values */
+    --fs-display: 40px;   /* project title */
+    --fs-lg: 18px;        /* credit values, logline */
+    --fs-md: 16px;        /* meta line, festival list */
+    --fs-base: 14px;      /* nav, footer links */
+    --fs-sm: 13px;        /* labels, small caps text */
+    --fs-xs: 12px;        /* legal line */
 
     --fw-light: 300;
     --fw-normal: 400;
+    --fw-medium: 500;
     --fw-semibold: 600;
+
+    /* Spacing scale: 8px base. Use these everywhere instead of raw px values */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 40px;
+    --space-5: 64px;
+    --space-6: 96px;
+
+    /* Layout */
+    --max-w: 1440px;          /* content stops growing here on very wide screens */
+    --page-pad: 40px;         /* side margins for the whole page */
+    --section-gap: 64px;      /* space between major sections */
+
+    /* Laurel strip */
+    --laurel-h: 74px;
+    --laurel-gap: 64px;
+    --laurel-speed: 40s;      /* time for one full loop; raise it to slow the strip down */
+}
+
+/* Phones and small tablets: tighter margins, smaller type and laurels */
+@media (max-width: 768px) {
+    :root {
+        --page-pad: 20px;
+        --section-gap: 40px;
+        --fs-display: 28px;
+        --laurel-h: 56px;
+        --laurel-gap: 40px;
+    }
 }
 
 body {
-
     background-color: #FAF3EB;
     margin: 0;
     padding: 0;
+    font-family: var(--font-main);
+    color: var(--dark-gray);
 }
 
-/* Navbar Styles */
+/* Centers all content and stops it stretching on very wide monitors */
+.page {
+    max-width: var(--max-w);
+    margin: 0 auto;
+}
+
+/* Keyboard focus: one visible ring for every interactive element */
+a:focus-visible,
+summary:focus-visible,
+button:focus-visible,
+video:focus-visible {
+    outline: 2px solid var(--light-blue);
+    outline-offset: 4px;
+}
+
+/* One divider style for the whole page */
+hr {
+    border: 0;
+    border-top: 1px solid var(--hairline);
+    margin: var(--space-4) var(--page-pad);
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Pushes Logo to left and Links to right */
-    align-items: center;            /* Vertically centers items */
-    padding: 40px 40px;             /* This provides the 40px spacing from the left */
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    padding: var(--space-4) var(--page-pad);
+}
+
+.logo-link img {
+    display: block;
+    height: 32px;
+    width: auto;
 }
 
 .nav-links {
     display: flex;
-    gap: 225px; /* This creates equal space between the 3 links */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    /* shrinks with the screen and tops out at 225px */
+    gap: var(--space-1) clamp(24px, 10vw, 225px);
 }
 
 .nav-item {
-    text-decoration: none;
     color: var(--dark-gray);
-    font-family: "Geist", sans-serif;
-    font-size: var(--fs-button);
+    font-size: var(--fs-base);
     font-weight: var(--fw-light);
     text-transform: uppercase;
+    text-decoration: none;
+    padding: var(--space-1) 0; /* bigger tap target on touch screens */
+    transition: color 0.3s ease;
 }
 
-/* Hover Effect */
 .nav-item:hover {
     color: var(--light-blue);
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
-/* Optional: Responsive adjustment */
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px;
-        flex-direction: column; /* Stack them on small screens */
-        gap: 20px;
+        flex-direction: column;
+        padding: var(--space-3) var(--page-pad);
+        gap: var(--space-2);
     }
+    .nav-links {
+        justify-content: center;
+        gap: 4px var(--space-3);
+    }
+}
+
+/* ---------- Trailer ---------- */
+.video-wrap {
+    position: relative;
+    margin: 0 var(--page-pad);
 }
 
 .miniclip {
-    max-width: 100%; 
-    height: auto;
     display: block;
-
-     object-fit: cover; 
-    aspect-ratio: 16 / 9; 
-}
-
-.project-header {
-
-    margin-top: 32px;
-    margin-left: 40px;
-    margin-right: 40px;
-    font-family: "Geist", sans-serif;
-    font-size: var(--fs-display);
-    letter-spacing: -3%;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between; /* Pushes Logo to left and Links to right */
-    align-items: center;   
-
-}
-
-.project-about {
-    margin: 0px 40px 0px 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
-    column-gap: 100px;
-}
-
-.laurels {
-
-    display: grid;
-    place-items: center;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    text-align: center;
-    gap: 12px;
-    font-family: "Geist", sans-serif;
-    font-size: 14px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
 
-    img {
-        width: auto;
-        height: 74px;
-        margin-bottom: 40px;
+/* "Play with sound" button laid over the corner of the trailer */
+.video-sound {
+    position: absolute;
+    left: var(--space-2);
+    bottom: var(--space-2);
+    min-height: 44px;
+    padding: 0 var(--space-3);
+    border: 0;
+    background: rgba(250, 243, 235, 0.94);
+    color: var(--dark-gray);
+    font: inherit;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-normal);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-sound:hover {
+    background: #FFFFFF;
+}
+
+.video-sound[hidden] {
+    display: none;
+}
+
+/* ---------- Project header ---------- */
+.project-header {
+    margin: var(--space-4) var(--page-pad) 0;
+    display: flex;
+    flex-wrap: wrap; /* title and meta line stack when there isn't room */
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-3);
+}
+
+.project-title {
+    margin: 0;
+    font-size: var(--fs-display);
+    font-weight: var(--fw-medium);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.project-year {
+    font-weight: var(--fw-light);
+}
+
+.project-meta {
+    margin: 0;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-light);
+}
+
+/* ---------- Project info (credits) ---------- */
+.project-about {
+    margin: 0 var(--page-pad);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(40px, 7vw, 100px);
+}
+
+/* Tablet: logline + cast across the top, crew columns side by side below */
+@media (max-width: 1024px) {
+    .project-about {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .project-about > div:first-child {
+        grid-column: 1 / -1;
     }
 }
 
-.label {
+/* Phone: one column */
+@media (max-width: 768px) {
+    .project-about {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
 
-    font-family: "Geist", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+/* Every label sits tight above its value */
+.label {
+    margin: 0 0 4px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-normal);
     text-transform: uppercase;
-    color: var(--dark-gray);
+    color: var(--text-muted);
 }
 
 .body {
-
-    font-family: "Geist", sans-serif;
-    font-size: 18px;
+    margin: 0;
+    max-width: 65ch; /* keeps the logline readable on wide screens */
+    font-size: var(--fs-lg);
     font-weight: var(--fw-normal);
-    list-style-type: none;
-    padding-bottom: 12px;
-
+    line-height: 1.5;
 }
 
-hr {
-    border: none;
-    height: 1px;
-    background: radial-gradient(ellipse 70.71% 70.71% at 50.00% 50.00%, rgba(149, 149, 155, 0.40) 0%, rgba(230, 230, 230, 0) 100%);
-    margin: 40px 40px;
+/* Logline and Starring: long-form blocks, separated by space, not rules */
+.about-block {
+    margin: 0 0 var(--space-4);
 }
 
-/* 1. The Main Footer Layout */
+.cast-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Crew credits as key/value pairs */
+.credits {
+    margin: 0;
+}
+
+.credit {
+    margin: 0 0 var(--space-3);
+}
+
+/* =====================================================
+   FESTIVAL LAUREL STRIP
+   ===================================================== */
+
+.laurel-strip {
+    margin-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+    text-align: center;
+}
+
+.laurel-strip > .label {
+    margin: 0 var(--page-pad) var(--space-4);
+}
+
+.laurel-marquee {
+    overflow: hidden;
+}
+
+/* Default (no JavaScript, or "reduce motion" is on): laurels simply wrap and
+   sit centered in rows. The scrolling only switches on when the script adds
+   the .is-animated class. */
+.laurel-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4) var(--laurel-gap);
+    margin: 0;
+    padding: 0 var(--page-pad);
+    list-style: none;
+}
+
+.laurel-track li {
+    flex: 0 0 auto;
+}
+
+.laurel-track img {
+    display: block;
+    height: var(--laurel-h);
+    width: auto;
+}
+
+/* Scrolling mode */
+.laurel-marquee.is-animated {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.laurel-marquee.is-animated .laurel-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: max-content;
+    /* The script duplicates the laurels, so moving the track left by exactly
+       half its width loops with no visible jump. The right padding equals one
+       gap so the seam between the two copies is spaced like every other gap. */
+    padding: 0 var(--laurel-gap) 0 0;
+    gap: var(--laurel-gap);
+    animation: laurel-scroll var(--laurel-speed) linear infinite;
+}
+
+@keyframes laurel-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.laurel-marquee:hover .laurel-track {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .laurel-marquee.is-animated .laurel-track {
+        animation: none;
+    }
+}
+
+/* ---------- Full festival list: one minimal, centered list ---------- */
+.festival-details {
+    margin: var(--space-3) var(--page-pad) 0;
+    text-align: center;
+}
+
+.festival-details summary {
+    display: inline-block;
+    padding: 14px var(--space-1);
+    color: var(--dark-gray);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.3s ease;
+}
+
+.festival-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.festival-details summary:hover {
+    color: var(--light-blue);
+}
+
+.festival-details .when-open { display: none; }
+.festival-details[open] .when-open { display: inline; }
+.festival-details[open] .when-closed { display: none; }
+
+.festival-list {
+    list-style: none;
+    margin: var(--space-3) auto 0;
+    padding: 0;
+    max-width: 640px;
+}
+
+.festival-list li {
+    padding: var(--space-1) 0;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-light);
+    line-height: 1.4;
+}
+
+.festival-list .festival-year {
+    margin-right: 10px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-normal);
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+}
+
+.festival-note {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ---------- Footer ---------- */
 .main-footer {
     display: flex;
-    justify-content: space-between; /* Pushes Logo to left, Group Container to right */
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-start;
-    padding: 80px 40px 0px 40px;
-    border-top: 1px solid var(--cream); /* Optional: subtle divider */
-
+    padding: var(--space-5) var(--page-pad) 0;
+    gap: var(--space-4) var(--space-5);
+    border-top: 1px solid var(--hairline);
 }
 
-/* 2. The Group Container (This handles the 200px spacing) */
 .links-container {
     display: flex;
-    gap: 200px; /* This spaces the 3 groups apart */
+    flex-wrap: wrap;
+    gap: var(--space-4) clamp(40px, 8vw, 200px);
 }
 
-/* Logo & About Section */
 .footer-brand {
     display: flex;
     flex-direction: column;
+    gap: var(--space-3);
+
+    img {
+        height: 58px;
+        width: auto;
+    }
 }
 
-/* I fixed the missing bracket here */
-img {
+.footer-brand img {
     height: 58px;
     width: auto;
 }
 
-.logo-text {
-    margin-bottom: 10px;
-}
-
 .about-sentence {
-    font-size: 12px;
-    color: var(--dark-gray);
-    font-family: "Geist", sans-serif;
-    opacity: 0.8;
-    max-width: 250px;
+    margin: 0;
+    max-width: 280px;
+    font-size: var(--fs-sm);
+    line-height: 1.5;
 }
 
-/* Group Styling */
 .footer-group {
-    display: flex;
-    flex-direction: column;
     width: 160px;
 }
 
-/* Combined your group styles into one block */
-.footer-group span {
-    font-size: 14px;
-    font-weight: 600;
-    font-family: "Geist", sans-serif;
-    color: var(--dark-gray);
+.footer-heading {
+    margin: 0 0 var(--space-2);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
 }
 
-/* List Styling */
 .footer-group ul {
-    font-size: 12px;
     list-style: none;
+    margin: 0;
     padding: 0;
     text-transform: uppercase;
-    font-weight: 300;
-    font-family: "Geist", sans-serif;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-light);
 }
 
-.footer-group ul li {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.footer-group ul li a {
+.footer-group a {
+    display: inline-block;
+    padding: 4px 0;
     color: var(--dark-gray);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-group ul li a:hover {
+.footer-group a:hover,
+.tags a:hover {
     color: var(--light-blue);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
-/* Responsive: Stack on small screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .main-footer {
         flex-direction: column;
-        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding-top: var(--space-4);
+        gap: var(--space-4);
     }
     .links-container {
-        gap: 40px; /* Closer gap on mobile */
+        gap: var(--space-4);
     }
     .footer-group {
-        text-align: center;
+        width: auto;
+        min-width: 140px;
     }
+}
+
+hr.footer-rule {
+    margin: var(--space-3) var(--page-pad);
 }
 
 .tags {
-
     display: flex;
-    justify-content: space-between; 
-    font-family: "Geist", sans-serif;
-    font-weight: 300;
-    font-size: 10px;
-    color: var(--dark-gray);
-    padding: 0px 40px 80px 40px;
-    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-3);
+    padding: 0 var(--page-pad) var(--space-5);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-light);
 }
+
 .tags a {
     color: var(--dark-gray);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-.tags a:hover {
-    color: var(--light-blue);
+
+@media (max-width: 768px) {
+    .tags {
+        padding-bottom: var(--space-4);
+    }
 }
