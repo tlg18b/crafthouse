@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="working-class.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Working Class</title>
+
+     <script>
+        if (!('startViewTransition' in document)) {
+            document.documentElement.classList.add('js-fade');
+        }
+    </script>
+
+</head>
+<body>
+<div class="page">
+
+    <nav class="navbar" aria-label="Main">
+        <!-- Logo -->
+        <a href="index.html" class="logo-link">
+            <img src="nav-logo.png" alt="Crafthouse">
+        </a>
+
+        <!-- Links -->
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">HOME</a>
+            <a href="about.html" class="nav-item">ABOUT</a>
+            <a href="cicada.html" class="nav-item">NEXT PROJECT</a>
+        </div>
+    </nav>
+
+    <main>
+
+       <!-- Still Carousel -->
+<div class="still-carousel">
+
+    <div class="still-viewport">
+        <div class="still-track">
+
+            <div class="still-slide">
+                <img
+                    src="working-class-still-01.png"
+                    alt="Working Class still"
+                >
+            </div>
+
+            <div class="still-slide">
+                <img
+                    src="working-class-still-02.png"
+                    alt="Working Class still"
+                >
+            </div>
+
+            <div class="still-slide">
+                <img
+                    src="working-class-still-03.png"
+                    alt="Working Class still"
+                >
+            </div>
+
+            <div class="still-slide">
+                <img
+                    src="working-class-still-04.png"
+                    alt="Working Class still"
+                >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Carousel dots -->
+    <div class="carousel-dots" aria-label="Project stills">
+
+        <button
+            class="carousel-dot is-active"
+            type="button"
+            aria-label="Show still 1"
+            aria-current="true">
+        </button>
+
+        <button
+            class="carousel-dot"
+            type="button"
+            aria-label="Show still 2">
+        </button>
+
+        <button
+            class="carousel-dot"
+            type="button"
+            aria-label="Show still 3">
+        </button>
+
+        <button
+            class="carousel-dot"
+            type="button"
+            aria-label="Show still 4">
+        </button>
+
+    </div>
+
+</div>
+
+        <div class="project-header">
+            <h1 class="project-title">Working Class <span class="project-year">2027</span></h1>
+            <p class="project-meta">Drama · 69 min</p>
+        </div>
+
+        <hr>
+
+        <div class="project-about">
+
+            <!-- Logline + Starring: long-form blocks -->
+            <div>
+                <section class="about-block">
+                    <p class="label">Logline</p>
+                    <p class="body">When a reclusive architect is visited by his estranged, working-class family, he reveals a hidden secret: a wish-granting fairy. As old tensions resurface, the family must decide if it is a blessing, a curse, or a mirror to their own dysfunctions.</p>
+                </section>
+
+                <section class="about-block">
+                    <p class="label">Starring</p>
+                    <ul class="body cast-list">
+                        <li>Matrell Smith</li>
+                        <li>Cindy Peralta</li>
+                        <li>Kassidy Charles</li>
+                        <li>Clyde McAllister</li>
+                        <li>Roberta Pikser</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Crew: key/value pairs (dl = list of terms and their values) -->
+            <dl class="credits">
+                <div class="credit">
+                    <dt class="label">Writer and Director</dt>
+                    <dd class="body">Travaé Davis</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Producers</dt>
+                    <dd class="body">Jaelyn Ellis & Travaé Davis</dd>
+                </div>
+                
+                <div class="credit">
+                    <dt class="label">Associate Producers</dt>
+                    <dd class="body">Alex Taylor & Francesca Poliseno</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Casting Director</dt>
+                    <dd class="body">Olivia Battles</dd>
+                </div>
+            </dl>
+
+            <dl class="credits">
+                <div class="credit">
+                    <dt class="label">Production Designer</dt>
+                    <dd class="body">Amal Qureshi</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Editor</dt>
+                    <dd class="body">Travaé Davis</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Post Sound Mixer</dt>
+                    <dd class="body">Jesse A. Lewis</dd>
+                </div>
+                <div class="credit">
+                    <dt class="label">Composer</dt>
+                    <dd class="body">Lou Moran</dd>
+                </div>
+                
+            </dl>
+
+        </div>
+
+
+    </main>
+
+    <footer class="main-footer">
+        <!-- Logo and About Section -->
+        <div class="footer-brand">
+            <a href="index.html" >
+            <img src="footer-logo.png" alt="Crafthouse">
+        </a>
+            <p class="about-sentence">CRAFTHOUSE is a New York-based production company for bold, unexpected stories from underrepresented voices.</p>
+        </div>
+
+        <!-- This wrapper keeps the groups together on the right -->
+        <div class="links-container">
+            <!-- Navigation Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Navigation</h2>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </div>
+
+            <!-- Projects Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Projects</h2>
+                <ul>
+                    <li><a href="working-class.html">WORKING CLASS</a></li>
+                    <li><a href="bossanova.html">BOSSANOVA</a></li>
+                    <li><a href="mumma.html">MUMMA</a></li>
+                    <li><a href="munchies.html">MUNCHIES</a></li>
+                    <li><a href="cicada.html">CICADA</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Group -->
+            <div class="footer-group">
+                <h2 class="footer-heading">Drop a Line</h2>
+                <ul>
+                    <li><a href="https://www.instagram.com/crafthousepictures" target="_blank">INSTAGRAM</a></li>
+                    <li><a href="#">LINKEDIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <hr class="footer-rule">
+
+    <div class="tags">
+        <span>Site by <a href="https://tracygaboyau.com" target="_blank" rel="noopener">Tracy Gaboyau</a></span>
+        <span>© 2025 All rights reserved</span>
+    </div>
+
+</div>
+
+<script>
+(function () {
+
+    var carousel = document.querySelector('.still-carousel');
+
+    if (!carousel) return;
+
+    var viewport = carousel.querySelector('.still-viewport');
+    var track = carousel.querySelector('.still-track');
+    var slides = carousel.querySelectorAll('.still-slide');
+    var dots = carousel.querySelectorAll('.carousel-dot');
+
+    var currentIndex = 0;
+
+    function showSlide(index) {
+
+        currentIndex = index;
+
+        var slide = slides[index];
+
+        if (!slide) return;
+
+        /*
+         * Move the track so the selected still
+         * sits at the beginning of the viewport.
+         */
+        track.style.transform =
+            'translateX(-' + slide.offsetLeft + 'px)';
+
+        dots.forEach(function (dot, i) {
+
+            dot.classList.toggle(
+                'is-active',
+                i === index
+            );
+
+            if (i === index) {
+                dot.setAttribute(
+                    'aria-current',
+                    'true'
+                );
+            } else {
+                dot.removeAttribute(
+                    'aria-current'
+                );
+            }
+
+        });
+    }
+
+
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener('click', function () {
+            showSlide(index);
+        });
+
+    });
+
+
+    /*
+     * Keep the carousel positioned correctly
+     * when the browser is resized.
+     */
+    window.addEventListener('resize', function () {
+        showSlide(currentIndex);
+    });
+
+})();
+</script>
+
+</body>
+</html>

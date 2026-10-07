@@ -268,74 +268,7 @@ hr {
     margin: 0 0 var(--space-3);
 }
 
-/* =====================================================
-   FESTIVAL LAUREL STRIP
-   ===================================================== */
 
-.laurel-strip {
-    margin-top: var(--section-gap);
-    padding-bottom: var(--section-gap);
-    text-align: center;
-}
-
-.laurel-strip > .label {
-    margin: 0 var(--page-pad) var(--space-4);
-}
-
-.laurel-marquee {
-    overflow: hidden;
-}
-
-/* Default (no JavaScript, or "reduce motion" is on): laurels simply wrap and
-   sit centered in rows. The scrolling only switches on when the script adds
-   the .is-animated class. */
-.laurel-track {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-4) var(--laurel-gap);
-    margin: 0;
-    padding: 0 var(--page-pad);
-    list-style: none;
-}
-
-.laurel-track li {
-    flex: 0 0 auto;
-}
-
-.laurel-track img {
-    display: block;
-    height: var(--laurel-h);
-    width: auto;
-}
-
-/* Scrolling mode */
-.laurel-marquee.is-animated {
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.laurel-marquee.is-animated .laurel-track {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: max-content;
-    /* The script duplicates the laurels, so moving the track left by exactly
-       half its width loops with no visible jump. The right padding equals one
-       gap so the seam between the two copies is spaced like every other gap. */
-    padding: 0 var(--laurel-gap) 0 0;
-    gap: var(--laurel-gap);
-    animation: laurel-scroll var(--laurel-speed) linear infinite;
-}
-
-@keyframes laurel-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-
-.laurel-marquee:hover .laurel-track {
-    animation-play-state: paused;
-}
 
 @media (prefers-reduced-motion: reduce) {
     .laurel-marquee.is-animated .laurel-track {
@@ -343,70 +276,7 @@ hr {
     }
 }
 
-/* ---------- Full festival list: one minimal, centered list ---------- */
-.festival-details {
-    margin: var(--space-3) var(--page-pad) 0;
-    text-align: center;
-}
 
-.festival-details summary {
-    display: inline-block;
-    padding: 14px var(--space-1);
-    color: var(--dark-gray);
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    cursor: pointer;
-    list-style: none;
-    transition: color 0.3s ease;
-}
-
-.festival-details summary::-webkit-details-marker {
-    display: none;
-}
-
-.festival-details summary:hover {
-    color: var(--light-blue);
-}
-
-.festival-details .when-open { display: none; }
-.festival-details[open] .when-open { display: inline; }
-.festival-details[open] .when-closed { display: none; }
-
-.festival-list {
-    list-style: none;
-    margin: var(--space-3) auto 0;
-    padding: 0;
-    max-width: 640px;
-}
-
-.festival-list li {
-    padding: var(--space-1) 0;
-    font-size: var(--fs-md);
-    font-weight: var(--fw-light);
-    line-height: 1.4;
-}
-
-.festival-list .festival-year {
-    margin-right: 10px;
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-normal);
-    letter-spacing: 0.04em;
-    font-variant-numeric: tabular-nums;
-    color: var(--text-muted);
-}
-
-.festival-note {
-    display: block;
-    margin-top: 2px;
-    font-size: var(--fs-xs);
-    font-weight: var(--fw-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
 
 /* ---------- Footer ---------- */
 .main-footer {

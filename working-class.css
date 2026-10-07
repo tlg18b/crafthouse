@@ -137,47 +137,79 @@ hr {
     }
 }
 
-/* ---------- Trailer ---------- */
-.video-wrap {
-    position: relative;
+/* ---------- Still Carousel ---------- */
+
+.still-carousel {
     margin: 0 var(--page-pad);
 }
 
-.miniclip {
+/*
+   The viewport clips the carousel so the next
+   image can peek into view on the right.
+*/
+.still-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.still-track {
+    display: flex;
+    gap: var(--space-3);
+    width: max-content;
+    transition: transform 0.45s ease;
+}
+
+.still-slide {
+    flex: 0 0 calc(100vw - (var(--page-pad) * 2));
+    max-width: calc(
+        var(--max-w) - (var(--page-pad) * 2)
+    );
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.still-slide img {
     display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
 }
 
-/* "Play with sound" button laid over the corner of the trailer */
-.video-sound {
-    position: absolute;
-    left: var(--space-2);
-    bottom: var(--space-2);
-    min-height: 44px;
-    padding: 0 var(--space-3);
+
+/* ---------- Carousel Dots ---------- */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
     border: 0;
-    background: rgba(250, 243, 235, 0.94);
-    color: var(--dark-gray);
-    font: inherit;
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-normal);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    border-radius: 50%;
+    background: #B9B9B9;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.video-sound:hover {
-    background: #FFFFFF;
+.carousel-dot.is-active {
+    background: var(--dark-gray);
+    transform: scale(1.15);
 }
 
-.video-sound[hidden] {
-    display: none;
+.carousel-dot:hover {
+    background: var(--dark-gray);
 }
+
+
 
 /* ---------- Project header ---------- */
 .project-header {
@@ -268,145 +300,6 @@ hr {
     margin: 0 0 var(--space-3);
 }
 
-/* =====================================================
-   FESTIVAL LAUREL STRIP
-   ===================================================== */
-
-.laurel-strip {
-    margin-top: var(--section-gap);
-    padding-bottom: var(--section-gap);
-    text-align: center;
-}
-
-.laurel-strip > .label {
-    margin: 0 var(--page-pad) var(--space-4);
-}
-
-.laurel-marquee {
-    overflow: hidden;
-}
-
-/* Default (no JavaScript, or "reduce motion" is on): laurels simply wrap and
-   sit centered in rows. The scrolling only switches on when the script adds
-   the .is-animated class. */
-.laurel-track {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-4) var(--laurel-gap);
-    margin: 0;
-    padding: 0 var(--page-pad);
-    list-style: none;
-}
-
-.laurel-track li {
-    flex: 0 0 auto;
-}
-
-.laurel-track img {
-    display: block;
-    height: var(--laurel-h);
-    width: auto;
-}
-
-/* Scrolling mode */
-.laurel-marquee.is-animated {
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.laurel-marquee.is-animated .laurel-track {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: max-content;
-    /* The script duplicates the laurels, so moving the track left by exactly
-       half its width loops with no visible jump. The right padding equals one
-       gap so the seam between the two copies is spaced like every other gap. */
-    padding: 0 var(--laurel-gap) 0 0;
-    gap: var(--laurel-gap);
-    animation: laurel-scroll var(--laurel-speed) linear infinite;
-}
-
-@keyframes laurel-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-
-.laurel-marquee:hover .laurel-track {
-    animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .laurel-marquee.is-animated .laurel-track {
-        animation: none;
-    }
-}
-
-/* ---------- Full festival list: one minimal, centered list ---------- */
-.festival-details {
-    margin: var(--space-3) var(--page-pad) 0;
-    text-align: center;
-}
-
-.festival-details summary {
-    display: inline-block;
-    padding: 14px var(--space-1);
-    color: var(--dark-gray);
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    cursor: pointer;
-    list-style: none;
-    transition: color 0.3s ease;
-}
-
-.festival-details summary::-webkit-details-marker {
-    display: none;
-}
-
-.festival-details summary:hover {
-    color: var(--light-blue);
-}
-
-.festival-details .when-open { display: none; }
-.festival-details[open] .when-open { display: inline; }
-.festival-details[open] .when-closed { display: none; }
-
-.festival-list {
-    list-style: none;
-    margin: var(--space-3) auto 0;
-    padding: 0;
-    max-width: 640px;
-}
-
-.festival-list li {
-    padding: var(--space-1) 0;
-    font-size: var(--fs-md);
-    font-weight: var(--fw-light);
-    line-height: 1.4;
-}
-
-.festival-list .festival-year {
-    margin-right: 10px;
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-normal);
-    letter-spacing: 0.04em;
-    font-variant-numeric: tabular-nums;
-    color: var(--text-muted);
-}
-
-.festival-note {
-    display: block;
-    margin-top: 2px;
-    font-size: var(--fs-xs);
-    font-weight: var(--fw-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
 
 /* ---------- Footer ---------- */
 .main-footer {
@@ -526,5 +419,60 @@ hr.footer-rule {
 @media (max-width: 768px) {
     .tags {
         padding-bottom: var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .still-carousel {
+        margin: 0 var(--page-pad);
+    }
+
+    .still-track {
+        gap: 12px;
+    }
+
+    .still-slide {
+        /*
+         * On mobile the image becomes a true
+         * full-width slide.
+         */
+        flex-basis: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .carousel-dots {
+        margin-top: 12px;
+        gap: 6px;
+    }
+
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .project-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin-top: var(--space-3);
+    }
+
+    .project-title {
+        font-size: var(--fs-display);
+    }
+
+    .project-meta {
+        grid-column: 1;
+        margin: 0;
+    }
+
+    .project-type {
+        grid-column: 1;
+        grid-row: auto;
+
+        margin-top: var(--space-2);
+
+        align-self: auto;
     }
 }
